@@ -2,28 +2,44 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
- * Description: computes and prints the sum of all the multiples of 3 or 5
- * below 1024(excluded), followed by a new line
- *
+ * main - fibonacci <3
+ * purpose - no hardcore
  * Return: 0
  */
 int main(void)
 {
-	int i = 0;
-	unsigned long int a = 0, b = 1, next = 0;
+	unsigned long int i;
+	unsigned long int bef = 1;
+	unsigned long int aft = 2;
+	unsigned long int i  = 100000000;
+	unsigned long int bef1;
+	unsigned long int bef2;
+	unsigned long int aft1;
+	unsigned long int aft2;
 
-	while (i < 98)
+	printf("%lu", bef);
+
+	for (i = 1; i < 91; i++)
 	{
-		next = a + b;
-		a = b;
-		b = next;
-		printf("%lu", next);
-
-		if (i < 97)
-			printf(", ");
-		i++;
+		printf(", %lu", aft);
+		aft += bef;
+		bef = aft - bef;
 	}
-	_putchar('\n');
+	 bef1 = (bef / 1);
+	 bef2 = (bef % 1);
+	 aft1 = (aft / 1);
+	 aft2 = (aft % 1);
+
+	for (i = 92; i < 99, i++)
+	{
+		printf(", %lu", aft1 + (aft2 / 1));
+		printf("%lu", aft2 % 1);
+		aft1 = aft1 + bef1;
+		bef1 = aft1 - bef1;
+		aft2 = aft2 + bef2;
+		bef2 = aft2 - bef2;
+
+	}
+	printf("\n");
 	return (0);
 }

@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * print_triangle - prints a triangle, followed by a new line
@@ -8,6 +7,8 @@
  */
 void print_triangle(int size)
 {
+	int i, j;
+
 	if (size <= 0)
 	{
 		_putchar('\n');

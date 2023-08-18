@@ -1,29 +1,24 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * print_number - print an integer
- * @n: integer to be printed
+ * print_number - prints an integer
+ *
+ * @n: The integer to be printed
  */
 void print_number(int n)
 {
+	unsigned int num = n;
+
+	/* first check if its negative */
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		num = -num;
 	}
+	/* print the first few digits */
+	if ((num / 10) > 0)
+		print_number(num / 10);
 
-	int divisor = 1;
-
-	while (n / divisor >= 10)
-	{
-		divisor *= 10;
-	}
-
-	while (divisor > 0)
-	{
-		_putchar((n / divisor) + '0');
-		n %= divisor;
-		divisor /= 10;
-	}
+	/* print the last digit */
+	_putchar((num %  10) + 48);
 }

@@ -8,17 +8,13 @@
  */
 void print_rev(char *s)
 {
-	int length = 0;
-	/*calculate string*/
-	while (s[length] != '\0')
+	if (*s)
 	{
-		length++;
+		print_rev(s + 1);
+		putchar(*s);
 	}
-	/* print string in reverse*/
-	for (int i = length - 1; i >= 0; i--)
+	else
 	{
-		putchar(s[i]);
+		putchar('\n');
 	}
-
-	putchar('\n');
 }

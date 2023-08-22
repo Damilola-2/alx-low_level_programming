@@ -14,7 +14,7 @@ void print_rev(char *s)
 	}
 	else
 	{
-		print_rev(s + 1);
-		printf("%c" , *s);
+		print_rev(s - 1);
+		printf("%c", *s);
 	}
 }

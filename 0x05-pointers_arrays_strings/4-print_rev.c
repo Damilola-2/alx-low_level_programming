@@ -8,11 +8,13 @@
  */
 void print_rev(char *s)
 {
-	int length = strlen(s);
-
-	for (int i = length - 1; i >= 0; i--)
+	if (*s == '\0')
 	{
-		printf("%c", s[i]);
+		printf("\n");
 	}
-	printf("\n");
+	else
+	{
+		print_rev(s + 1);
+		printf("%c", *s);
+	}
 }

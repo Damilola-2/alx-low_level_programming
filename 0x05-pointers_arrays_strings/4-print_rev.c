@@ -1,21 +1,28 @@
 #include "main.h"
 
 /**
- * print_rev - print the string, reverse, followed by anew line
- * @s: string
- * return: 0
+ * print_rev - print a string, reverse, followed by anew line
+ * @s: input
+ *  
+ * Return: 0
  */
 
 void print_rev(char *s)
 {
-	int i = 0;
+	int length = strlen(s);
 
-	while (*s[i])
-		i++;
+	for (int i = length - 1; i >= 0; i--)
 
-	while (i--)
 	{
-		putchar(*s[i]);
+		printf("%c", s[i]);
 	}
-	putchar('\n');
-}
+		printf("\n");
+	}/* Description -  main entry*/
+	int main(void)
+	{
+		char str[] = "Hello, World!";
+
+		print_rev(str);
+
+		return (0);
+	}

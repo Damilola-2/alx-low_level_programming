@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "main.h"
 
 /**
  * print_rev - print a string, in reverse, followed by anew line
@@ -15,7 +16,6 @@ void print_rev(char *s)
 	else
 	{
 		print_rev(s + 1);
-		printf("%c", *s)
-			s++;
+		printf("%c", *s);
 	}
 }

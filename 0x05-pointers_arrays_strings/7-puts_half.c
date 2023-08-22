@@ -14,14 +14,3 @@ void puts_half(char *str)
 
 	printf("%s\n", str + start_index);
 }
-/**
- * main - New entry
- * Return: 0
- */
-int main(void)
-{
-	char myString[] = "Hello, World!";
-
-	puts_half(myString);
-	return (0);
-}

@@ -2,16 +2,17 @@
 /**
  * print_chessboard - Entry point
  * @a: array
- * Return: Always 0 success
+ * Return: Always 0
  */
 void print_chessboard(char (*a)[8])
 {
-	for (int row = 0; row < 8; row++)
+	int i;
+	int j;
+
+	for (i = 0; i < 8; i++)
 	{
-		for (int col = 0; col < 8; col++)
-		{
-			printf("%c ", a[row][col]);
-		}
-		printf("\n");
+		for (j = 0; j < 8; j++)
+			_putchar(a[i][j]);
+		_putchar('\n');
 	}
 }

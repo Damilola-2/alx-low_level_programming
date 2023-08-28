@@ -6,14 +6,12 @@
  */
 void print_chessboard(char (*a)[8])
 {
-	int itr, jtr;
-
-	for (itr = 0; itr < 8; itr++)
+	for (int row = 0; row < 8; row++)
 	{
-		for (jtr = 0; jtr < 8; jtr++)
+		for (int col = 0; col < 8; col++)
 		{
-			_putchar(a[itr][jtr]);
+			printf("%c ", a[row][col]);
 		}
-		_putchar('\n');
+		printf("\n");
 	}
 }

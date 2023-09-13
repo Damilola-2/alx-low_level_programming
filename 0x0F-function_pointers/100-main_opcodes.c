@@ -8,34 +8,21 @@
  */
 int main(int argc, char *argv[])
 {
-	int bytes, i;
-	char *arr;
+	int (*op_func)(int, int), a, b;
 
-	if (argc != 2)
-	{
-		printf("Error\n");
-		exit(1);
-	}
+	if (argc != 4)
+		printf("Error\n"), exit(98);
 
-	bytes = atoi(argv[1]);
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
 
-	if (bytes < 0)
-	{
-		printf("Error\n");
-		exit(2);
-	}
+	op_func = get_op_func(argv[2]);
+	if (!op_func)
+		printf("Error\n"), exit(99);
 
-	arr = (char *)main;
+	if (!b && (argv[2][0] == '/' || argv[2][0] == '%'))
+		printf("Error\n"), exit(100);
 
-	for (i = 0; i < bytes; i++)
-	{
-		if (i == bytes - 1)
-		{
-			printf("%02hhx\n", arr[i]);
-			break;
-		}
-		printf("%02hhx ", arr[1]);
-	}
+	printf("%d\n", op_func(a, b));
 	return (0);
 }
-

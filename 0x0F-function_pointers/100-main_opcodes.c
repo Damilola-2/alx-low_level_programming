@@ -1,28 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - prints its own opcodes
+ * main - prints the code for the school student
  * @argc: number of arguments
  * @argv: array of arguments
  * Return: always 0
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int (*op_func)(int, int), a, b;
+	int bytes, i;
+	char *arr;
 
-	if (argc != 4)
-		printf("Error\n"), exit(98);
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
+	bytes = atoi(argv[1]);
 
-	op_func = get_op_func(argv[2]);
-	if (!op_func)
-		printf("Error\n"), exit(99);
+	if (bytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
 
-	if (!b && (argv[2][0] == '/' || argv[2][0] == '%'))
-		printf("Error\n"), exit(100);
+	arr = (char *)main;
 
-	printf("%d\n", op_func(a, b));
+	for (i = 0; i < bytes; i++)
+	{
+		if (i == bytes - 1)
+		{
+			printf("%02hhx\n", arr[i]);
+			break;
+		}
+		printf("%02hhx", arr[i]);
+	}
 	return (0);
 }
